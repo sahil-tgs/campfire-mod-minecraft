@@ -54,6 +54,7 @@ public class UnlitCampfireBlock extends Block {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack heldItem = player.getStackInHand(hand);
         
+        // Only flint and steel can light the campfire
         if (heldItem.isOf(Items.FLINT_AND_STEEL)) {
             if (!world.isClient) {
                 Direction facing = state.get(FACING);
@@ -66,33 +67,51 @@ public class UnlitCampfireBlock extends Block {
                 }
                 world.playSound(null, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
             } else {
-                for (int i = 0; i < 10; i++) {
-                    world.addParticle(ParticleTypes.FLAME,
-                            pos.getX() + 0.5 + (world.random.nextDouble() - 0.5) * 0.5,
-                            pos.getY() + 0.5,
-                            pos.getZ() + 0.5 + (world.random.nextDouble() - 0.5) * 0.5,
-                            0, 0.05, 0);
-                }
+                spawnIgniteParticles(world, pos);
             }
             player.swingHand(hand, true);
             return ActionResult.success(world.isClient);
         }
         
+        // Fire charge also works as an alternative to flint and steel
         if (heldItem.isOf(Items.FIRE_CHARGE)) {
             if (!world.isClient) {
-                Direction facing = state.get(FACING);
-                BlockState campfireState = Blocks.CAMPFIRE.getDefaultState()
-                        .with(CampfireBlock.LIT, true)
-                        .with(CampfireBlock.FACING, facing);
-                world.setBlockState(pos, campfireState);
+                lightCampfire(world, pos, state);
                 if (!player.getAbilities().creativeMode) {
                     heldItem.decrement(1);
                 }
                 world.playSound(null, pos, SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
+            } else {
+                spawnIgniteParticles(world, pos);
             }
+            player.swingHand(hand, true);
             return ActionResult.success(world.isClient);
         }
         
         return ActionResult.PASS;
+    }
+    
+    /**
+     * Lights the campfire by replacing this block with a lit vanilla campfire.
+     */
+    private void lightCampfire(World world, BlockPos pos, BlockState state) {
+        Direction facing = state.get(FACING);
+        BlockState campfireState = Blocks.CAMPFIRE.getDefaultState()
+                .with(CampfireBlock.LIT, true)
+                .with(CampfireBlock.FACING, facing);
+        world.setBlockState(pos, campfireState);
+    }
+    
+    /**
+     * Spawns flame particles when the campfire is ignited.
+     */
+    private void spawnIgniteParticles(World world, BlockPos pos) {
+        for (int i = 0; i < 10; i++) {
+            world.addParticle(ParticleTypes.FLAME,
+                    pos.getX() + 0.5 + (world.random.nextDouble() - 0.5) * 0.5,
+                    pos.getY() + 0.5,
+                    pos.getZ() + 0.5 + (world.random.nextDouble() - 0.5) * 0.5,
+                    0, 0.05, 0);
+        }
     }
 }

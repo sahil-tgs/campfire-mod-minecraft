@@ -100,3 +100,4 @@ build/
 
 Copy `campfire_overhaul-1.0.0.jar` to your `.minecraft/mods` folder.
 
+

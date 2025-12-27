@@ -3,3 +3,4 @@
     "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "campfire_overhaul:stump"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]
 }
 
+

@@ -1,0 +1,59 @@
+# Campfire Overhaul - Project Rules for AI Agents
+
+## CRITICAL: Read Before Any Implementation
+
+This mod's core philosophy is **IMMERSIVE WORLD INTERACTION**, not crafting-table convenience.
+
+## ⛔ NEVER DO
+
+1. **NEVER add crafting table recipes** for:
+   - Unlit Campfire
+   - Firewood (item or block)
+   - Any future campfire-related components
+   
+2. **NEVER create shortcuts** that bypass the physical building process
+
+3. **NEVER replace** the vanilla campfire - we enhance its CREATION, not its behavior
+
+## ✅ ALWAYS DO
+
+1. **Use world-placed block interactions** (right-click mechanics)
+2. **Follow the progression**: Chop → Stack → Fuel → Light
+3. **Use vanilla textures** where possible
+4. **Keep mechanics intuitive** - discoverable through experimentation
+
+## The Campfire Building Flow (CANONICAL)
+
+```
+[Stump] ← ONLY crafting table recipe allowed (3 logs)
+    ↓
+[Log on Stump] → Right-click → [4x Firewood items]
+    ↓
+[Place Firewood] → Stack to 4 → [Firewood Stack block]
+    ↓
+[Add ANY fuel] → [Unlit Campfire block]
+    ↓
+[Flint & Steel] → [Vanilla Campfire] 🔥
+```
+
+## Quick Reference
+
+| Component | How to Obtain |
+|-----------|---------------|
+| Stump | Craft: 3 logs in row |
+| Firewood | Chop log on stump |
+| Firewood Stack | Place & stack firewood |
+| Unlit Campfire | Add fuel to 4-stack |
+| Lit Campfire | Flint & Steel on unlit |
+
+## Before Implementing Any Feature
+
+Ask yourself:
+1. Does this require a crafting table? → **Probably wrong approach**
+2. Can this be a world interaction? → **Do this instead**
+3. Does it fit "realistic campfire building"? → **If no, reconsider**
+
+## Read Full Context
+
+See `CONTRIBUTING.md` for complete project vision, architecture, and guidelines.
+

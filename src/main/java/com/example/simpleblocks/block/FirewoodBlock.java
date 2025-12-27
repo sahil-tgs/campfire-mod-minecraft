@@ -2,10 +2,12 @@ package com.example.simpleblocks.block;
 
 import com.example.simpleblocks.ModBlocks;
 import com.example.simpleblocks.ModItems;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
@@ -52,6 +54,20 @@ public class FirewoodBlock extends Block {
         builder.add(COUNT);
     }
     
+    /**
+     * Checks if an item is a valid fuel source.
+     * Accepts all furnace fuels except lava bucket.
+     */
+    private boolean isValidFuel(Item item) {
+        // Exclude lava bucket
+        if (item == Items.LAVA_BUCKET) {
+            return false;
+        }
+        // Check if item is registered as fuel in Fabric's FuelRegistry
+        Integer fuelTime = FuelRegistry.INSTANCE.get(item);
+        return fuelTime != null && fuelTime > 0;
+    }
+    
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(COUNT)) {
@@ -68,8 +84,9 @@ public class FirewoodBlock extends Block {
         ItemStack heldItem = player.getStackInHand(hand);
         int count = state.get(COUNT);
         
+        // When firewood stack is full (4), accept any fuel source to create unlit campfire
         if (count == 4) {
-            if (heldItem.isOf(Items.COAL) || heldItem.isOf(Items.CHARCOAL)) {
+            if (isValidFuel(heldItem.getItem())) {
                 if (!world.isClient) {
                     world.setBlockState(pos, ModBlocks.UNLIT_CAMPFIRE.getDefaultState());
                     if (!player.getAbilities().creativeMode) {
