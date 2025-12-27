@@ -1,0 +1,39 @@
+{
+    "schemaVersion": 1,
+    "id": "immersive_campfire",
+    "version": "${version}",
+    "name": "Immersive Campfires",
+    "description": "An immersive overhaul of campfire creation! Chop logs on stumps to get firewood, stack them up, add coal, and light with flint and steel. Built from scratch with inspiration from the amazing campfire mod community.",
+    "authors": [
+        "Sahil Mandi"
+    ],
+    "contributors": [
+        "Inspired by: CaoTrongThang (Better Campfires)",
+        "Inspired by: connor135246 (Campfire Backport)",
+        "Inspired by: spacegoat3 (Buildable Campfire)"
+    ],
+    "contact": {
+        "homepage": "https://github.com/sahil-tgs/Immersive-Campfire",
+        "sources": "https://github.com/sahil-tgs/Immersive-Campfire",
+        "issues": "https://github.com/sahil-tgs/Immersive-Campfire/issues"
+    },
+    "license": "MIT",
+    "icon": "assets/immersive_campfire/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.example.simpleblocks.SimpleBlocksMod"
+        ],
+        "client": [
+            "com.example.simpleblocks.SimpleBlocksModClient"
+        ]
+    },
+    "mixins": [],
+    "depends": {
+        "fabricloader": ">=0.15.0",
+        "minecraft": "~1.20.4",
+        "java": ">=17",
+        "fabric-api": "*"
+    },
+    "suggests": {}
+}

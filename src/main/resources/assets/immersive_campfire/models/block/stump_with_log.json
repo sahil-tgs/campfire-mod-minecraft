@@ -1,0 +1,39 @@
+{
+    "parent": "minecraft:block/block",
+    "textures": {
+        "stump_top": "minecraft:block/oak_log_top",
+        "stump_side": "minecraft:block/oak_log",
+        "log_top": "minecraft:block/oak_log_top",
+        "log_side": "minecraft:block/oak_log",
+        "particle": "minecraft:block/oak_log"
+    },
+    "elements": [
+        {
+            "comment": "Stump base",
+            "from": [0, 0, 0],
+            "to": [16, 10, 16],
+            "faces": {
+                "north": {"uv": [0, 6, 16, 16], "texture": "#stump_side"},
+                "east": {"uv": [0, 6, 16, 16], "texture": "#stump_side"},
+                "south": {"uv": [0, 6, 16, 16], "texture": "#stump_side"},
+                "west": {"uv": [0, 6, 16, 16], "texture": "#stump_side"},
+                "up": {"uv": [0, 0, 16, 16], "texture": "#stump_top"},
+                "down": {"uv": [0, 0, 16, 16], "texture": "#stump_top", "cullface": "down"}
+            }
+        },
+        {
+            "comment": "Log on top",
+            "from": [2, 10, 2],
+            "to": [14, 16, 14],
+            "faces": {
+                "north": {"uv": [2, 10, 14, 16], "texture": "#log_side"},
+                "east": {"uv": [2, 10, 14, 16], "texture": "#log_side"},
+                "south": {"uv": [2, 10, 14, 16], "texture": "#log_side"},
+                "west": {"uv": [2, 10, 14, 16], "texture": "#log_side"},
+                "up": {"uv": [2, 2, 14, 14], "texture": "#log_top"},
+                "down": {"uv": [2, 2, 14, 14], "texture": "#log_top"}
+            }
+        }
+    ]
+}
+

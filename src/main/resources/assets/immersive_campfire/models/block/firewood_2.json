@@ -1,0 +1,35 @@
+{
+    "parent": "block/block",
+    "textures": {
+        "log": "block/campfire_log",
+        "particle": "block/campfire_log"
+    },
+    "elements": [
+        {
+            "comment": "First log - left side",
+            "from": [1, 0, 0],
+            "to": [5, 4, 16],
+            "faces": {
+                "north": {"uv": [0, 4, 4, 8], "texture": "#log", "cullface": "north"},
+                "east": {"uv": [0, 0, 16, 4], "texture": "#log"},
+                "south": {"uv": [0, 4, 4, 8], "texture": "#log", "cullface": "south"},
+                "west": {"uv": [16, 0, 0, 4], "texture": "#log"},
+                "up": {"uv": [0, 0, 16, 4], "rotation": 90, "texture": "#log"},
+                "down": {"uv": [0, 0, 16, 4], "rotation": 90, "texture": "#log", "cullface": "down"}
+            }
+        },
+        {
+            "comment": "Second log - right side",
+            "from": [11, 0, 0],
+            "to": [15, 4, 16],
+            "faces": {
+                "north": {"uv": [0, 4, 4, 8], "texture": "#log", "cullface": "north"},
+                "east": {"uv": [0, 0, 16, 4], "texture": "#log"},
+                "south": {"uv": [0, 4, 4, 8], "texture": "#log", "cullface": "south"},
+                "west": {"uv": [16, 0, 0, 4], "texture": "#log"},
+                "up": {"uv": [0, 0, 16, 4], "rotation": 90, "texture": "#log"},
+                "down": {"uv": [0, 0, 16, 4], "rotation": 90, "texture": "#log", "cullface": "down"}
+            }
+        }
+    ]
+}

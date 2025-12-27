@@ -1,0 +1,35 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.code-workspace
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Fabric
+run/
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Misc
+*.log
+*.tmp
+
+# Downloaded texture packs (not part of mod)
+textures/
+better-campfire-model/
+ashlesscampfire/

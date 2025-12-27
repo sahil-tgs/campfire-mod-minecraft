@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "immersive_campfire:block/unlit_campfire"
+        },
+        "facing=south": {
+            "model": "immersive_campfire:block/unlit_campfire",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "immersive_campfire:block/unlit_campfire",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "immersive_campfire:block/unlit_campfire",
+            "y": 90
+        }
+    }
+}

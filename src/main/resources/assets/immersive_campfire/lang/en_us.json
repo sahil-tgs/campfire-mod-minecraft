@@ -1,0 +1,7 @@
+{
+    "block.immersive_campfire.stump": "Chopping Stump",
+    "block.immersive_campfire.firewood_stack": "Firewood Stack",
+    "block.immersive_campfire.unlit_campfire": "Unlit Campfire",
+    "item.immersive_campfire.firewood": "Firewood",
+    "itemGroup.immersive_campfire.main": "Immersive Campfire"
+}

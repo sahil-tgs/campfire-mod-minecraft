@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "has_log=false": {
+            "model": "immersive_campfire:block/stump"
+        },
+        "has_log=true": {
+            "model": "immersive_campfire:block/stump_with_log"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "count=1": {
+            "model": "immersive_campfire:block/firewood_1"
+        },
+        "count=2": {
+            "model": "immersive_campfire:block/firewood_2"
+        },
+        "count=3": {
+            "model": "immersive_campfire:block/firewood_3"
+        },
+        "count=4": {
+            "model": "immersive_campfire:block/firewood_4"
+        }
+    }
+}
